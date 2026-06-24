@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "b0c0a952-47fd-4127-8921-870dce8d8078",
+    "name": "Java Api Crud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47721302",
+    "_collection_link": "https://go.postman.co/collection/47721302-b0c0a952-47fd-4127-8921-870dce8d8078?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Obtener productos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{Base_URL}}",
+          "host": [
+            "{{Base_URL}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{Base_URL}}/7",
+          "host": [
+            "{{Base_URL}}"
+          ],
+          "path": [
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear producto",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Monitor Samsung\",\r\n    \"precio\": 70000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Base_URL}}",
+          "host": [
+            "{{Base_URL}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar Producto",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Monitor Samsung\",\r\n  \"precio\": 95000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Base_URL}}/8",
+          "host": [
+            "{{Base_URL}}"
+          ],
+          "path": [
+            "8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Producto",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Monitor Samsung\",\r\n  \"precio\": 95000\r\n}"
+        },
+        "url": {
+          "raw": "{{Base_URL}}/8",
+          "host": [
+            "{{Base_URL}}"
+          ],
+          "path": [
+            "8"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
