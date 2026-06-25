@@ -1,4 +1,5 @@
 package com.example.demo.service;
+import com.example.demo.exceptions.ArticuloNoEncontradoException;
 import com.example.demo.model.Articulo;
 import com.example.demo.repository.ArticuloRepository;
 
@@ -22,9 +23,10 @@ public class ArticuloServiceImpl implements ArticuloService {
         return articuloRepository.findAll();
     }
 
-    public Optional<Articulo> getArticuloById(Long id) {
-        return articuloRepository.findById(id);
-    }
+    public Articulo getArticuloById(Long id) {
+    return articuloRepository.findById(id)
+            .orElseThrow(() -> new ArticuloNoEncontradoException(id));
+}
 
     public Articulo saveArticulo(Articulo articulo) {
         return articuloRepository.save(articulo);

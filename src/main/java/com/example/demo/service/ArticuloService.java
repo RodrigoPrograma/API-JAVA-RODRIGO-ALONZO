@@ -7,7 +7,7 @@ import java.util.Optional;
 public interface ArticuloService {
 
     List<Articulo> getAllArticulos();
-    Optional<Articulo> getArticuloById(Long id);
+    Articulo getArticuloById(Long id);
     Articulo saveArticulo(Articulo articulo);
     Articulo updateArticulo(Long id, Articulo articulo);
     void deleteArticulo(Long id);

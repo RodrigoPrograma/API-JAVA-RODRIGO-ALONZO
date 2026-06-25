@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/articulos")
@@ -26,10 +27,8 @@ public class ArticuloController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Articulo> getArticuloById(@PathVariable Long id) {
-        return articuloService.getArticuloById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public Articulo getArticuloById(@PathVariable Long id) {
+        return articuloService.getArticuloById(id);
     }
 
     @PutMapping("/{id}")
@@ -47,4 +46,4 @@ public class ArticuloController {
         articuloService.deleteArticulo(id);
         return ResponseEntity.noContent().build();
     }
-    }
+}
