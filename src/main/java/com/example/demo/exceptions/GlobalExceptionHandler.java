@@ -9,9 +9,16 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleException(Exception ex) {
-        return new ResponseEntity<>("An error occurred: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+    @ExceptionHandler(ArticuloNoEncontradoException.class)
+    public ResponseEntity<ErrorResponse> handleArticuloNoEncontrado(ArticuloNoEncontradoException ex) {
     
+        ErrorResponse error = new ErrorResponse(
+            ex.getMessage(),
+            HttpStatus.NOT_FOUND.value()
+        );
+
+        return ResponseEntity
+        .status(HttpStatus.NOT_FOUND)
+        .body(error);
+    }
 }
